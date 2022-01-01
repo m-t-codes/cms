@@ -19,4 +19,4 @@
 - docker-compose.yml changed the volume line for the mysql to:
     - './mysql:/var/lib/mysql'
 - sail up -d
-- created a git repo and pushed it to GitHub
+- created a git repo and pushed it to GitHub 
