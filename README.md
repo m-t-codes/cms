@@ -20,3 +20,25 @@
     - './mysql:/var/lib/mysql'
 - sail up -d
 - created a git repo and pushed it to GitHub 
+- added Tailwind CSS 
+    $ npm install -D tailwindcss postcss autoprefixer
+    $ npx tailwindcss init
+
+    webpack.js
+        mix.js("resources/js/app.js", "public/js")
+            .postCss("resources/css/app.css", "public/css", [
+            require("tailwindcss"),
+        ]);
+
+    tailwind.config.js
+        module.exports = {
+            content: [
+                "./resources/**/*.blade.php",
+                "./resources/**/*.js",
+                "./resources/**/*.vue",
+        ],
+
+    app.css
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
