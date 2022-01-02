@@ -42,3 +42,20 @@
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
+
+- Installing Fortify
+    $ sail composer require laravel/fortify
+    $ sail artisan vendor:publish --provider="Laravel\\Fortify\\FortifyServiceProvider"
+
+    config/app.php add Provider:
+        App\Providers\FortifyServiceProvider::class,
+
+    $ sail artisan migrate
+
+    app/Providers/FortifyServiceProvider.php
+        Fortify::loginView(function(){
+            return view('auth.login');
+        });
+        Fortify::registerView(function(){
+            return view('auth.register');
+        });
